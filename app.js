@@ -1,11 +1,11 @@
-/*variables */
-const boton =document.querySelector('button');
-const color =  document.getElementById('color ');
+// variables
+const boton = document.querySelector('button');
+const color = document.querySelector('#color'); 
 
-function generarColor( ){
+function generarColor() {
     let digitos = '0123456789ABCDEF';
-    let colorHex ="#";
-    for( let i = 0; i < 6; i++ ){
+    let colorHex = "#";
+    for (let i = 0; i < 6; i++) {
         let indiceAleatorio = Math.floor(Math.random() * 16);
         colorHex += digitos[indiceAleatorio];
     }
@@ -13,11 +13,9 @@ function generarColor( ){
 }
 
 boton.addEventListener('click', function() {
-
     let colorAleatorio = generarColor();
-      //actualizar el texto
+    // actualizar el texto
     color.textContent = colorAleatorio;
-    //Actualizar el color de fondo
+    // actualizar el color de fondo
     document.body.style.backgroundColor = colorAleatorio;
 });
-
